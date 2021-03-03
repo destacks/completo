@@ -1,0 +1,23 @@
+{
+  "name": "completo",
+  "version": "0.1.0",
+  "description": "A minimal, zero-dependency autocomplete implementation for your web projects",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/destacks/completo.git"
+  },
+  "keywords": [
+    "autocomplete",
+    "auto-suggestion"
+  ],
+  "author": "Alexis Michaltsis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/destacks/completo/issues"
+  },
+  "homepage": "https://github.com/destacks/completo#readme"
+}
