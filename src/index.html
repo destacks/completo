@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Completo</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <form autocomplete="off">
-        <input id="autocomplete-input" type="text">
-        <button type="submit">Submit</button>
-    </form>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <input id="autocomplete-input" type="text" />
 
     <script src="index.js"></script>
     <script>
-        const element = document.getElementById("autocomplete-input");
-        const target = "http://localhost:3000/words";
-        completo(element, target);
+      const element = document.getElementById("autocomplete-input");
+      const target = "http://localhost:3000/words";
+      completo(element, target);
     </script>
-</body>
+  </body>
 </html>
