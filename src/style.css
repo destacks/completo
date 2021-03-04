@@ -25,10 +25,14 @@
   border: none;
 }
 
-.completo-list-item {
+.completo-item {
   border-radius: 0;
   font-family: sans-serif;
   font-size: 1rem;
   height: 1.25rem;
   padding: 1px 2px 1px 2px;
+}
+
+.completo-match {
+  font-weight: bold;
 }

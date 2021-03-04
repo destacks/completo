@@ -2,7 +2,7 @@
   "words": [
     {
       "query": "a",
-      "result": ["a", "ab", "abc", "abcd", "abcde", "abcdef", "abcdefg"]
+      "result": ["aaaa", "ab", "abc", "abcd", "abcde", "abcdef", "abcdefg"]
     },
     {
       "query": "b",

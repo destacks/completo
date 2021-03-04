@@ -2,10 +2,12 @@ function completo(element, target) {
   const open = "open";
   const closed = "closed";
   const list = document.createElement("DIV");
+
   element.classList.add("completo-input");
   list.setAttribute("class", "completo-list");
   list.classList.add(closed);
   list.style.width = `${element.offsetWidth}px`;
+
   element.parentNode.appendChild(list);
 
   element.addEventListener("keyup", function () {
@@ -15,7 +17,13 @@ function completo(element, target) {
   function createListItems(result) {
     let listItems = "";
     for (let i = 0; i < result.length; i++) {
-      listItems += `<div class="completo-list-item">${result[i]}</div>`;
+      const escapedResult = escape(result[i]);
+      const escapedValue = escape(element.value);
+      const replaced = escapedResult.replaceAll(
+        escapedValue,
+        `<span class="completo-match">${escapedValue}</span>`
+      );
+      listItems += `<div class="completo-item">${replaced}</div>`;
     }
     if (listItems) {
       if (list.classList.contains(closed)) {
@@ -43,5 +51,14 @@ function completo(element, target) {
           list.innerHTML = createListItems(result);
         }
       });
+  }
+
+  function escape(string) {
+    return string
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/&/g, "&amp;");
   }
 }
