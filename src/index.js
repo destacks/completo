@@ -2,9 +2,11 @@ function completo(element, target) {
   const open = "open";
   const closed = "closed";
   const list = document.createElement("DIV");
+  element.classList.add("completo-input");
   list.setAttribute("id", `${element.id}-list`);
   list.setAttribute("class", "completo-list");
   list.classList.add(closed);
+  list.style.width = `${element.offsetWidth}px`;
   element.parentNode.appendChild(list);
 
   element.addEventListener("click", function () {
