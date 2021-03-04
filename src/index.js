@@ -1,6 +1,7 @@
 function completo(element, target) {
   const list = document.createElement("DIV");
   list.setAttribute("id", `${element.id}-list`);
+  list.setAttribute("class", "completo-list");
   element.parentNode.appendChild(list);
 
   element.addEventListener("click", function () {
@@ -14,7 +15,7 @@ function completo(element, target) {
   function createListItems(result) {
     let listItems = "";
     for (let i = 0; i < result.length; i++) {
-      listItems = `${listItems}<div>${result[i]}</div>`;
+      listItems += `<div class="completo-list-item">${result[i]}</div>`;
     }
     return listItems;
   }
