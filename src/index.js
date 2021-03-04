@@ -44,6 +44,4 @@ function completo(element, target) {
         }
       });
   }
-
-  console.log("Initialized");
 }
