@@ -8,10 +8,6 @@ function completo(element, target) {
   list.style.width = `${element.offsetWidth}px`;
   element.parentNode.appendChild(list);
 
-  element.addEventListener("click", function () {
-    console.log("Click");
-  });
-
   element.addEventListener("keyup", function () {
     fetchFromTarget(element.value, target);
   });
