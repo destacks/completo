@@ -1,0 +1,7 @@
+.completo-list.open {
+  border: 1px solid #000000;
+}
+
+.completo-list.closed {
+  border: none;
+}
