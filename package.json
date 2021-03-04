@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/destacks/completo/issues"
   },
-  "homepage": "https://github.com/destacks/completo#readme"
+  "homepage": "https://github.com/destacks/completo#readme",
+  "devDependencies": {
+    "json-server": "^0.16.3"
+  }
 }
