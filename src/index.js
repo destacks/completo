@@ -8,7 +8,15 @@ function completo(element, target) {
   });
 
   function fetchFromTarget(value, target) {
-      console.log(`Fetching with value "${value}"\nfrom "${target}"`);
+    fetch(`${target}?query=${value}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (Array.isArray(data) && data.length) {
+            console.log(data[0]["result"]);
+        } else {
+            console.log([]);
+        }
+      });
   }
 
   console.log("Initialized");

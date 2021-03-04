@@ -1,0 +1,32 @@
+{
+  "words": [
+    {
+      "query": "a",
+      "result": ["a", "ab", "abc", "abcd", "abcde", "abcdef", "abcdefg"]
+    },
+    {
+      "query": "b",
+      "result": ["ab", "abc", "abcd", "abcde", "abcdef", "abcdefg"]
+    },
+    {
+      "query": "c",
+      "result": ["abc", "abcd", "abcde", "abcdef", "abcdefg"]
+    },
+    {
+      "query": "d",
+      "result": ["abcd", "abcde", "abcdef", "abcdefg"]
+    },
+    {
+      "query": "e",
+      "result": ["abcde", "abcdef", "abcdefg"]
+    },
+    {
+      "query": "f",
+      "result": ["abcdef", "abcdefg"]
+    },
+    {
+      "query": "g",
+      "result": ["abcdefg"]
+    }
+  ]
+}
