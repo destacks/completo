@@ -3,7 +3,6 @@ function completo(element, target) {
   const closed = "closed";
   const list = document.createElement("DIV");
   element.classList.add("completo-input");
-  list.setAttribute("id", `${element.id}-list`);
   list.setAttribute("class", "completo-list");
   list.classList.add(closed);
   list.style.width = `${element.offsetWidth}px`;
