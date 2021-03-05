@@ -11,8 +11,19 @@ function completo(element, target) {
   element.classList.add("completo-input");
   element.parentNode.insertBefore(list, element.nextSibling);
 
-  element.addEventListener("keyup", function () {
+  element.addEventListener("keydown", function (e) {
+    if (e.keyCode === 40) {
+      console.log("down");
+    } else if (e.keyCode === 38) {
+      console.log("up");
+    } else if (e.keyCode === 13) {
+      console.log("enter");
+    }
+  });
+
+  element.addEventListener("input", function () {
     fetchFromTarget(element.value, target);
+    console.log("fetch");
   });
 
   function createListItems(result) {
