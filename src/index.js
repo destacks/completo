@@ -51,10 +51,7 @@ function completo(element, target) {
       }
       list.classList.add(open);
     } else {
-      if (list.classList.contains(open)) {
-        list.classList.remove(open);
-      }
-      list.classList.add(closed);
+      closeList();
     }
     return listItems;
   }
@@ -101,5 +98,13 @@ function completo(element, target) {
         list.children[i].classList.remove(active);
       }
     }
+  }
+
+  function closeList() {
+    if (list.classList.contains(open)) {
+      list.classList.remove(open);
+    }
+    list.classList.add(closed);
+    row = 0;
   }
 }
