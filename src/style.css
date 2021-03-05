@@ -32,6 +32,10 @@
   border-radius: 0;
 }
 
+.completo-item.active {
+  background-color: #ddd;
+}
+
 .completo-match {
   font-weight: bold;
 }

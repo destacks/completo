@@ -1,8 +1,8 @@
 function completo(element, target) {
   let row = 0;
-  let resultLength = 0;
   const open = "open";
   const closed = "closed";
+  const active = "active";
   const list = document.createElement("DIV");
   const width = window.getComputedStyle(element).getPropertyValue("width");
 
@@ -16,12 +16,14 @@ function completo(element, target) {
   element.addEventListener("keydown", function (e) {
     if (e.keyCode === 40) {
       row += 1;
-      row = normalize(row, resultLength);
+      row = normalize(row, list);
       console.log("down", row);
+      if (row > 0) setActiveRow(row, list);
     } else if (e.keyCode === 38) {
       row -= 1;
-      row = normalize(row, resultLength);
+      row = normalize(row, list);
       console.log("up", row);
+      if (row > 0) setActiveRow(row, list);
     } else if (e.keyCode === 13) {
       console.log("enter", row);
     }
@@ -33,7 +35,6 @@ function completo(element, target) {
   });
 
   function createListItems(result) {
-    resultLength = result.length;
     let listItems = "";
     for (let i = 0; i < result.length; i++) {
       const escapedResult = escape(result[i]);
@@ -81,12 +82,24 @@ function completo(element, target) {
       .replace(/&/g, "&amp;");
   }
 
-  function normalize(row, resultLength) {
-    if (row > resultLength) {
-      row = resultLength;
-    } else if (row < 0) {
-      row = 0;
+  function normalize(activeRow, list) {
+    const listLength = list.children.length;
+    if (activeRow > listLength) {
+      activeRow = listLength;
+    } else if (activeRow < 0) {
+      activeRow = 0;
     }
-    return row;
-  }  
+    return activeRow;
+  }
+
+  function setActiveRow(activeRow, list) {
+    const indexActiveRow = activeRow - 1;
+    for (let i = 0; i < list.children.length; i++) {
+      if (indexActiveRow === i) {
+        list.children[i].classList.add(active);
+      } else {
+        list.children[i].classList.remove(active);
+      }
+    }
+  }
 }
