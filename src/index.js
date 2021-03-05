@@ -3,6 +3,8 @@ function completo(element, target) {
   const closed = "closed";
   const list = document.createElement("DIV");
 
+  element.setAttribute("autocomplete", "off");
+  
   element.classList.add("completo-input");
   list.setAttribute("class", "completo-list");
   list.classList.add(closed);
