@@ -2,14 +2,15 @@ function completo(element, target) {
   const open = "open";
   const closed = "closed";
   const list = document.createElement("DIV");
+  const width = window.getComputedStyle(element).getPropertyValue("width");
 
   list.setAttribute("class", "completo-list");
   list.classList.add(closed);
-  list.style.width = `${element.offsetWidth}px`;
+  list.style.width = width;
   element.setAttribute("autocomplete", "off");
   element.classList.add("completo-input");
   element.parentNode.insertBefore(list, element.nextSibling);
-    
+
   element.addEventListener("keyup", function () {
     fetchFromTarget(element.value, target);
   });
