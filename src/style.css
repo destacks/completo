@@ -1,9 +1,6 @@
 .completo-input {
   border: 1px solid #000;
   border-radius: 0;
-  font-family: sans-serif;
-  font-size: 1rem;
-  height: 1.25rem;
   padding: 1px 2px 1px 2px;
 }
 
@@ -27,9 +24,6 @@
 
 .completo-item {
   border-radius: 0;
-  font-family: sans-serif;
-  font-size: 1rem;
-  height: 1.25rem;
   padding: 1px 2px 1px 2px;
 }
 
