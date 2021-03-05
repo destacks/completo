@@ -1,4 +1,6 @@
 function completo(element, target) {
+  let row = 0;
+  let resultLength = 0;
   const open = "open";
   const closed = "closed";
   const list = document.createElement("DIV");
@@ -13,11 +15,15 @@ function completo(element, target) {
 
   element.addEventListener("keydown", function (e) {
     if (e.keyCode === 40) {
-      console.log("down");
+      row += 1;
+      row = normalize(row, resultLength);
+      console.log("down", row);
     } else if (e.keyCode === 38) {
-      console.log("up");
+      row -= 1;
+      row = normalize(row, resultLength);
+      console.log("up", row);
     } else if (e.keyCode === 13) {
-      console.log("enter");
+      console.log("enter", row);
     }
   });
 
@@ -27,6 +33,7 @@ function completo(element, target) {
   });
 
   function createListItems(result) {
+    resultLength = result.length;
     let listItems = "";
     for (let i = 0; i < result.length; i++) {
       const escapedResult = escape(result[i]);
@@ -73,4 +80,13 @@ function completo(element, target) {
       .replace(/>/g, "&gt;")
       .replace(/&/g, "&amp;");
   }
+
+  function normalize(row, resultLength) {
+    if (row > resultLength) {
+      row = resultLength;
+    } else if (row < 0) {
+      row = 0;
+    }
+    return row;
+  }  
 }
