@@ -3,15 +3,13 @@ function completo(element, target) {
   const closed = "closed";
   const list = document.createElement("DIV");
 
-  element.setAttribute("autocomplete", "off");
-  
-  element.classList.add("completo-input");
   list.setAttribute("class", "completo-list");
   list.classList.add(closed);
   list.style.width = `${element.offsetWidth}px`;
-
-  element.parentNode.appendChild(list);
-
+  element.setAttribute("autocomplete", "off");
+  element.classList.add("completo-input");
+  element.parentNode.insertBefore(list, element.nextSibling);
+    
   element.addEventListener("keyup", function () {
     fetchFromTarget(element.value, target);
   });
