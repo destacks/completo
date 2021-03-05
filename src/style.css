@@ -1,5 +1,4 @@
 .completo-input {
-  box-sizing: content-box;
   border: 1px solid #000;
   border-radius: 0;
   padding: 1px 2px 1px 2px;
@@ -10,7 +9,6 @@
 }
 
 .completo-list {
-  box-sizing: content-box;
   position: absolute;
   z-index: 9999;
   border-radius: 0;
