@@ -1,4 +1,4 @@
-function completo(element, target) {
+function completo(element, target, debug = false) {
   let row = 0;
   const open = "open";
   const closed = "closed";
@@ -13,17 +13,17 @@ function completo(element, target) {
 
   element.addEventListener("keydown", function (e) {
     if (e.keyCode === 40) {
-      // Down
+      if (debug) console.log("down");
       e.preventDefault();
       const normalizedRow = normalize(row + 1, list);
       if (normalizedRow > 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 38) {
-      // Up
+      if (debug) console.log("up");
       e.preventDefault();
       const normalizedRow = normalize(row - 1, list);
       if (normalizedRow >= 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 13) {
-      // Enter
+      if (debug) console.log("enter");
       if (row > 0) element.value = list.children[row - 1].innerText;
       closeList();
     }
@@ -84,6 +84,7 @@ function completo(element, target) {
           list.innerHTML = createListItems(result);
         }
       });
+    if (debug) console.log("fetch");
   }
 
   function escape(string) {
@@ -124,4 +125,6 @@ function completo(element, target) {
     list.classList.add(closed);
     row = 0;
   }
+
+  if (debug) console.log("initialized");
 }
