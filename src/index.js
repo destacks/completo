@@ -13,17 +13,18 @@ function completo(element, target) {
 
   element.addEventListener("keydown", function (e) {
     if (e.keyCode === 40) {
+      // Down
       row += 1;
       row = normalize(row, list);
-      console.log("down", row);
       if (row > 0) setActiveRow(row, list);
     } else if (e.keyCode === 38) {
+      // Up
       row -= 1;
       row = normalize(row, list);
-      console.log("up", row);
       if (row > 0) setActiveRow(row, list);
     } else if (e.keyCode === 13) {
-      console.log("enter", row);
+      // Enter
+      element.value = list.children[row - 1].innerText;
     }
   });
 
