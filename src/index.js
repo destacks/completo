@@ -106,8 +106,4 @@ function completo(element, target) {
     list.classList.add(closed);
     row = 0;
   }
-
-  function pixelToNumber(pixelString) {
-    return parseInt(pixelString.replace("px", ""));
-  }
 }
