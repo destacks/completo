@@ -42,6 +42,11 @@ function completo(element, target) {
     }
   });
 
+  list.addEventListener("click", function (e) {
+    element.value = e.target.innerText;
+    closeList();
+  });
+
   function createListItems(result) {
     let listItems = "";
     for (let i = 0; i < result.length; i++) {
