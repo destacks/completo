@@ -25,6 +25,8 @@ function completo(element, target) {
     } else if (e.keyCode === 13) {
       // Enter
       element.value = list.children[row - 1].innerText;
+      list.classList.add(closed);
+      row = 0;
     }
   });
 
