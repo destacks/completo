@@ -1,5 +1,13 @@
+:root {
+  --completo-width: 200px;
+  --completo-box-sizing: border-box;
+  --completo-border-width: 1px;
+}
+
 .completo-input {
-  border: 1px solid #000;
+  box-sizing: var(--completo-box-sizing);
+  width: var(--completo-width);
+  border: var(--completo-border-width) solid #000;
   border-radius: 0;
   padding: 1px 2px;
 }
@@ -9,6 +17,7 @@
 }
 
 .completo-list {
+  box-sizing: var(--completo-box-sizing);
   position: absolute;
   z-index: 9999;
   border-radius: 0;
@@ -16,7 +25,7 @@
 }
 
 .completo-list.open {
-  border: 1px solid #000;
+  border: var(--completo-border-width) solid #000;
   border-top: 0;
 }
 
@@ -26,6 +35,8 @@
 }
 
 .completo-item {
+  box-sizing: var(--completo-box-sizing);
+  width: calc(var(--completo-width) - 2 * var(--completo-border-width));
   overflow: hidden;
   border-radius: 0;
   padding: 1px 2px;

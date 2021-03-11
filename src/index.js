@@ -4,14 +4,9 @@ function completo(element, target) {
   const closed = "closed";
   const active = "active";
   const list = document.createElement("DIV");
-  const inputStyles = window.getComputedStyle(element, null);
-  const paddingL = pixelToNumber(inputStyles.paddingLeft);
-  const paddingR = pixelToNumber(inputStyles.paddingRight);
-  const width = pixelToNumber(inputStyles.width) + paddingL + paddingR;
 
   list.setAttribute("class", "completo-list");
   list.classList.add(closed);
-  list.style.width = `${width}px`;
   element.setAttribute("autocomplete", "off");
   element.classList.add("completo-input");
   element.parentNode.insertBefore(list, element.nextSibling);
