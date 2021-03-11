@@ -31,7 +31,6 @@ function completo(element, target) {
 
   element.addEventListener("input", function () {
     fetchFromTarget(element.value, target);
-    console.log("fetch");
   });
 
   list.addEventListener("mouseover", function (e) {
