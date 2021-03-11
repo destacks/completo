@@ -19,7 +19,7 @@ function completo(element, target) {
     } else if (e.keyCode === 38) {
       // Up
       const normalizedRow = normalize(row - 1, list);
-      if (normalizedRow > 0) setActiveRow(normalizedRow, list);
+      if (normalizedRow >= 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 13) {
       // Enter
       element.value = list.children[row - 1].innerText;
