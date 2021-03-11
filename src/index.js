@@ -14,10 +14,12 @@ function completo(element, target) {
   element.addEventListener("keydown", function (e) {
     if (e.keyCode === 40) {
       // Down
+      e.preventDefault();
       const normalizedRow = normalize(row + 1, list);
       if (normalizedRow > 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 38) {
       // Up
+      e.preventDefault();
       const normalizedRow = normalize(row - 1, list);
       if (normalizedRow >= 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 13) {
