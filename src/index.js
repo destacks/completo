@@ -14,14 +14,12 @@ function completo(element, target) {
   element.addEventListener("keydown", function (e) {
     if (e.keyCode === 40) {
       // Down
-      row += 1;
-      row = normalize(row, list);
-      if (row > 0) setActiveRow(row, list);
+      const normalizedRow = normalize(row + 1, list);
+      if (normalizedRow > 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 38) {
       // Up
-      row -= 1;
-      row = normalize(row, list);
-      if (row > 0) setActiveRow(row, list);
+      const normalizedRow = normalize(row - 1, list);
+      if (normalizedRow > 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 13) {
       // Enter
       element.value = list.children[row - 1].innerText;
@@ -107,6 +105,7 @@ function completo(element, target) {
   }
 
   function setActiveRow(activeRow, list) {
+    row = activeRow;
     const indexActiveRow = activeRow - 1;
     for (let i = 0; i < list.children.length; i++) {
       if (indexActiveRow === i) {
