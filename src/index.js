@@ -34,6 +34,14 @@ function completo(element, target) {
     console.log("fetch");
   });
 
+  list.addEventListener("mouseover", function (e) {
+    for (let i = 0; i < list.children.length; i++) {
+      if (e.target.innerText === list.children[i].innerText) {
+        setActiveRow(i + 1, list);
+      }
+    }
+  });
+
   function createListItems(result) {
     let listItems = "";
     for (let i = 0; i < result.length; i++) {
