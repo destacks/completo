@@ -75,11 +75,11 @@ function completo(element, target) {
 
   function escape(string) {
     return string
+      .replace(/&/g, "&amp;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;")
       .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/&/g, "&amp;");
+      .replace(/>/g, "&gt;");
   }
 
   function normalize(activeRow, list) {
