@@ -1,6 +1,7 @@
 .completo-input {
   border: 1px solid #000;
   border-radius: 0;
+  padding: 1px 2px;
 }
 
 .completo-input:focus {
@@ -25,9 +26,9 @@
 }
 
 .completo-item {
-  width: 100%;
   overflow: hidden;
   border-radius: 0;
+  padding: 1px 2px;
 }
 
 .completo-item.active {
