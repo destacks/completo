@@ -22,7 +22,7 @@ function completo(element, target) {
       if (normalizedRow >= 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 13) {
       // Enter
-      element.value = list.children[row - 1].innerText;
+      if (row > 0) element.value = list.children[row - 1].innerText;
       closeList();
     }
   });
