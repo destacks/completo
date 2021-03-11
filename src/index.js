@@ -47,6 +47,10 @@ function completo(element, target) {
     closeList();
   });
 
+  document.addEventListener("click", function (e) {
+    closeList();
+  });
+
   function createListItems(result) {
     let listItems = "";
     for (let i = 0; i < result.length; i++) {
