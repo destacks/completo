@@ -1,4 +1,9 @@
-function completo(element, target, debug = false) {
+function completo(element: HTMLInputElement, target: string, debug = false) {
+  /* Initial checks */
+  if (element.parentNode === null) {
+    throw Error("element.parentNode is null");
+  }
+
   let row = 0;
   const open = "open";
   const closed = "closed";
@@ -24,7 +29,8 @@ function completo(element, target, debug = false) {
       if (normalizedRow >= 0) setActiveRow(normalizedRow, list);
     } else if (e.keyCode === 13) {
       if (debug) console.log("enter");
-      if (row > 0) element.value = list.children[row - 1].innerText;
+      const listChildren = list.children[row - 1] as HTMLElement;
+      if (row > 0) element.value = listChildren.innerText;
       closeList();
     }
   });
@@ -34,15 +40,18 @@ function completo(element, target, debug = false) {
   });
 
   list.addEventListener("mouseover", function (e) {
+    const targetElement = e.target as HTMLElement;
     for (let i = 0; i < list.children.length; i++) {
-      if (e.target.innerText === list.children[i].innerText) {
+      const listChildren = list.children[i] as HTMLElement;
+      if (targetElement.innerText === listChildren.innerText) {
         setActiveRow(i + 1, list);
       }
     }
   });
 
   list.addEventListener("click", function (e) {
-    element.value = e.target.innerText;
+    const targetElement = e.target as HTMLElement;
+    element.value = targetElement.innerText;
     closeList();
   });
 
@@ -50,13 +59,14 @@ function completo(element, target, debug = false) {
     closeList();
   });
 
-  function createListItems(result) {
+  function createListItems(result: string[]) {
     let listItems = "";
     for (let i = 0; i < result.length; i++) {
       const escapedResult = escape(result[i]);
       const escapedValue = escape(element.value);
-      const replaced = escapedResult.replaceAll(
-        escapedValue,
+      const regex = new RegExp(escapedValue, "g");
+      const replaced = escapedResult.replace(
+        regex,
         `<span class="completo-match">${escapedValue}</span>`
       );
       listItems += `<div class="completo-item">${replaced}</div>`;
@@ -72,7 +82,7 @@ function completo(element, target, debug = false) {
     return listItems;
   }
 
-  function fetchFromTarget(value, target) {
+  function fetchFromTarget(value: string, target: string) {
     fetch(`${target}?query=${value}`)
       .then((response) => response.json())
       .then((data) => {
@@ -80,15 +90,15 @@ function completo(element, target, debug = false) {
           const result = data[0]["result"];
           list.innerHTML = createListItems(result);
         } else {
-          const result = [];
+          const result: string[] = [];
           list.innerHTML = createListItems(result);
         }
       });
     if (debug) console.log("fetch");
   }
 
-  function escape(string) {
-    return string
+  function escape(text: string): string {
+    return text
       .replace(/&/g, "&amp;")
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#039;")
@@ -96,7 +106,7 @@ function completo(element, target, debug = false) {
       .replace(/>/g, "&gt;");
   }
 
-  function normalize(activeRow, list) {
+  function normalize(activeRow: number, list: HTMLElement) {
     const listLength = list.children.length;
     if (activeRow > listLength) {
       activeRow = listLength;
@@ -106,7 +116,7 @@ function completo(element, target, debug = false) {
     return activeRow;
   }
 
-  function setActiveRow(activeRow, list) {
+  function setActiveRow(activeRow: number, list: HTMLElement) {
     row = activeRow;
     const indexActiveRow = activeRow - 1;
     for (let i = 0; i < list.children.length; i++) {
