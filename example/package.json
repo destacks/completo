@@ -1,19 +1,15 @@
 {
-  "name": "@destacks/completo",
-  "version": "0.2.0",
-  "description": "A minimal, zero-dependency autocomplete implementation for your web projects",
-  "main": "dist/main.js",
+  "name": "example",
+  "version": "0.1.0",
+  "description": "Usage example of @destacks/completo",
+  "main": "../dist/main.js",
   "scripts": {
-    "build": "tsc -w"
+    "json-server": "json-server --watch ./db.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/destacks/completo.git"
   },
-  "keywords": [
-    "autocomplete",
-    "auto-suggestion"
-  ],
   "author": "Alexis Michaltsis",
   "license": "MIT",
   "bugs": {
@@ -21,6 +17,6 @@
   },
   "homepage": "https://github.com/destacks/completo#readme",
   "devDependencies": {
-    "typescript": "^4.5.5"
+    "json-server": "^0.17.0"
   }
 }
