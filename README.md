@@ -24,7 +24,7 @@ npx degit destacks/completo
 
 To run the example, you need to serve a JSON file as pseudo-API
 
-### 1. Go to example folder named `example`
+### 1. Go to example
 
 - if installed via `npm`:
   ```sh
