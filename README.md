@@ -28,11 +28,11 @@ To run the example, you need to serve a JSON file as pseudo-API
 
 - if installed via `npm`:
   ```sh
-  cd node_modules/@destacks/completo/example
+  cd node_modules/@destacks/completo/example/
   ```
 - if installed via `degit`:
   ```sh
-  cd node_modules/@destacks/completo/example
+  cd example/
   ```
 
 ### 2. Install `json-server` dependency
