@@ -1,6 +1,6 @@
 {
   "name": "@destacks/completo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A minimal, zero-dependency autocomplete implementation for your web projects",
   "main": "dist/main.js",
   "scripts": {
