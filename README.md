@@ -1,6 +1,10 @@
 # completo
 
+![completo showcase](images/completo.gif)
+
 A minimal, zero-dependency autocomplete implementation for your web projects.
+
+By nature, `completo` is unstyled (headless), and it's up to you to style it.
 
 This project is still young and not yet ready for prime time.
 
